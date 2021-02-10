@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+   
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/formulaire.css">
+    </head>
+
+    <body>
+            
+            <div class="Choisir_profil" id="Choisir_profil">
+
+                    <p for="userName">Nom</p>
+                    <div class="userName">
+                        <input id="user" type="text" size="25" minlength="4" maxlength="30"><br>
+                    </div>                
+
+                    <p for="userName">Prénom</p>
+                    <div class="userName">
+                        <input id="user" type="text" size="25" minlength="4" maxlength="30"><br>
+                    </div>    
+
+                    <p for="userName">Email</p>
+                    <div class="userName">
+                        <input id="user" type="text" size="25" minlength="4" maxlength="30"><br>
+                    </div>    
+
+                    <p for="userName">Numéro carte bancaire</p>
+                    <div class="userName">
+                        <input id="user" type="text" size="25" minlength="4" maxlength="30"><br>
+                    </div>    
+
+                    <div class="box_card">
+                        <pre>
+                        <p for="userName">  Date d'expiration    CVC</p>
+                        </pre>
+                    </div>
+
+                    <div class="box_card">
+                        <input id="card" type="date"  
+                        min="2018-01-01" max="2025-12-31" size="25" >
+                        <input id="cardCVC" type="text" size="3" minlength="3" maxlength="3">
+                    </div>
+
+                    <div class="buttonFormulaire" > 
+                        <input onclick="redirectRetour()" type="submit" id="valider" value="Retour">
+                        <input onclick="redirectValider()" type="submit" id="valider" value="Valider">
+                    </div>
+
+                </form>
+
+            </div>
+    </body>
+
+</html> 
+
+<script src="js/thomas.js"></script>
