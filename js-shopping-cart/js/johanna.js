@@ -85,18 +85,18 @@ for (let i=0; i < carts.length; i++){
      let courseContainer = document.querySelector("tbody");
      let cartCost = localStorage.getItem('totalCost');
      
-     console.log(cartItems);
      if(cartItems && courseContainer){
          courseContainer.innerHTML = '';
          Object.values(cartItems).map(item => {
              courseContainer.innerHTML  += `
              <tbody>
-                 <tr>
+                 <tr id="remove">
                      <td></td>
                      <td><img src="./img/courses/${item.img}"></td>
                      <td>${item.title}</td>
                      <td>${item.price}</td>
                      <td>${item.inCart}</td>
+                     <td><button class="button onclick="removePorduct(courses">Supprimer</button></td>
                      <td></td>
                  </tr>
              </tbody>
@@ -109,8 +109,10 @@ for (let i=0; i < carts.length; i++){
              <thead>
                  <tr>
                      <th></th>
+                     <th></th>
                      <th>Total: </th>
                      <th>${cartCost}</th>
+                     <th></th>
                      <th></th>
                  </tr>
              </thead>
@@ -128,4 +130,40 @@ function clearCart() {
     document.location.reload();
 }
 
+// Suppimer article par article
+
+// Rediriger vers le formulaire (Valider son panier)
+function order() {
+    let cartItems = localStorage.getItem("coursesInCart");
+    cartItems = JSON.parse(cartItems);
+    let courseContainer = document.querySelector("tbody");
+
+    try {
+        // si le panier n'est pas vide on affiche le boutton commander
+        if(cartItems != null) {
+            document.getElementById("buttonAppear").innerHTML = '<button onclick="redirectFormulaire()" class="button u-full-width" >Commander</button>';
+        }
+    } catch (undefined) {
+    }
+    finally {
+    }
+}
+
+// Rediriger vers le formulaire 
+function redirectFormulaire() {
+    window.location.href = "formulaire.html";
+}
+
+// Rediriger vers la commande validée 
+function redirectValider() {
+    window.location.href = "valider.html";
+}
+
+// Rediriger vers le magasin (index)
+function redirectRetour() {
+    window.location.href = "index.html";
+}
+
+
 displayCart();
+order();
