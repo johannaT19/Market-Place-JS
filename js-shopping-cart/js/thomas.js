@@ -85,17 +85,18 @@ for (let i=0; i < carts.length; i++){
      let courseContainer = document.querySelector("tbody");
      let cartCost = localStorage.getItem('totalCost');
      
-     console.log(cartItems);
      if(cartItems && courseContainer){
          courseContainer.innerHTML = '';
          Object.values(cartItems).map(item => {
              courseContainer.innerHTML  += `
              <tbody>
-                 <tr>
+                 <tr id="remove">
+                     <td></td>
                      <td><img src="./img/courses/${item.img}"></td>
                      <td>${item.title}</td>
                      <td>${item.price}</td>
                      <td>${item.inCart}</td>
+                     <td><button class="button onclick="removePorduct(courses">Supprimer</button></td>
                      <td></td>
                  </tr>
              </tbody>
@@ -108,8 +109,10 @@ for (let i=0; i < carts.length; i++){
              <thead>
                  <tr>
                      <th></th>
+                     <th></th>
                      <th>Total: </th>
                      <th>${cartCost}</th>
+                     <th></th>
                      <th></th>
                  </tr>
              </thead>
@@ -126,6 +129,8 @@ function clearCart() {
     localStorage.removeItem("totalCost");
     document.location.reload();
 }
+
+// Suppimer article par article
 
 // Rediriger vers le formulaire (Valider son panier)
 function order() {
@@ -158,6 +163,7 @@ function redirectValider() {
 function redirectRetour() {
     window.location.href = "index.html";
 }
+
 
 displayCart();
 order();
