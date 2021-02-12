@@ -127,7 +127,6 @@ h3{
     align-items: center;
     color: white;
     font-family: 'Exo', sans-serif;
-    margin-top: -5%;
 }
 
 #card{
@@ -164,5 +163,17 @@ h3{
         padding-top: 2%;
         margin-top: 10%;
         margin-right: 150%;
+}
+
+.merci {
+    color: white;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 170%;
+}
+
+.merciLogo {
+    width: 50%;
+	height: 50%;
 }
 
